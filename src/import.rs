@@ -26,7 +26,7 @@ pub fn import_dir<P>(dir: P, branch: &str, message: &str) -> Result<()>
 
     try!(Import::new(stdin, branch, &dir, message).import());
 
-    try!(cmd.kill());
+    try!(cmd.wait());
 
     Ok(())
 }
